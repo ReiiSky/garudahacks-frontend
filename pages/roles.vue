@@ -20,12 +20,9 @@
           </p>
           <p class="mt-12 text-center">Daftar sebagai</p>
           <div class="flex items-center justify-between">
-            <a
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-center"
-              href="/register?as=umkm"
-            >
-              UMKM
-            </a>
+            <Button :size="'full'">
+              <a href="/register?as=umkm">UMKM</a>
+            </Button>
           </div>
         </div>
         <div class="card investor">
@@ -37,12 +34,9 @@
           </p>
           <p class="mt-12 text-center">Daftar sebagai</p>
           <div class="flex items-center justify-between">
-            <a
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-center"
-              href="/register?as=investor"
-            >
-              Pemodal
-            </a>
+            <Button :size="'full'">
+              <a href="/register?as=investor">Pemodal</a>
+            </Button>
           </div>
         </div>
         <div class="card company">
@@ -54,12 +48,9 @@
           </p>
           <p class="mt-12 text-center">Daftar sebagai</p>
           <div class="flex items-center justify-between">
-            <a
-              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full text-center"
-              href="/register?as=company"
-            >
-              Perusahaan
-            </a>
+            <Button :size="'full'">
+              <a href="/register?as=company">Perusahaan</a>
+            </Button>
           </div>
         </div>
       </div>

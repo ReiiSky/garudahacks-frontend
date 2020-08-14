@@ -21,7 +21,7 @@ export default {
     size: {
       type: String,
       validator(value) {
-        return ['sm', 'normal', 'md', 'lg', 'xl'].includes(value)
+        return ['sm', 'normal', 'md', 'lg', 'xl', 'full'].includes(value)
       },
       default: 'normal',
     },
@@ -59,6 +59,9 @@ export default {
       }
       if (this.size === 'xl') {
         return 'px-12 py-5'
+      }
+      if (this.size === 'full') {
+        return 'py-2 w-full'
       }
 
       return 'px-6 py-2'
