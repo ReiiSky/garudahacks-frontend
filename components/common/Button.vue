@@ -1,7 +1,7 @@
 <template>
   <button
-    class="rounded-md font-medium duration-75"
-    :class="[textColor, bgColor, `hover:${bgColorHover}`, btnSize]"
+    class="rounded-md font-medium duration-75 focus:outline-none focus:border-transparent"
+    :class="[textColor, bgColor, `hover:${bgColorHover}`, btnSize, shadow]"
   >
     <slot></slot>
   </button>
@@ -29,6 +29,10 @@ export default {
     textColor: {
       type: String,
       default: 'text-white',
+    },
+    shadow: {
+      type: String,
+      default: 'shadow-primary',
     },
   },
   computed: {
