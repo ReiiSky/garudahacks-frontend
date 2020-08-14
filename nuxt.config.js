@@ -19,7 +19,7 @@ export default {
 
   css: [],
 
-  plugins: ['~/plugins/click-outside', '~/plugins/vue-fragment'],
+  plugins: ['~/plugins/click-outside', '~/plugins/currency'],
 
   // Auto-Imports all components inside the common components directory
   components: ['~/components/common'],

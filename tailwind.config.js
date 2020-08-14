@@ -6,22 +6,32 @@
  */
 module.exports = {
   theme: {
-    fontSize: {
-      xs: '.75rem',
-      sm: '.875rem',
-      tiny: '.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
-      '7xl': '5rem',
-      '8xl': '6rem',
-      '9xl': '7rem',
-      '10xl': '8rem',
+    extend: {
+      fontSize: {
+        '7xl': '5rem',
+        '8xl': '6rem',
+        '9xl': '7rem',
+        '10xl': '8rem',
+      },
+      colors: {
+        primary: '#00AFF5',
+        primaryDark: '#0075A3',
+        success: '#5CD85A',
+        successDark: '#2DB62B',
+        danger: '#FF5A5F',
+      },
+      boxShadow: {
+        primary:
+          '0 10px 15px -3px rgba(0, 175, 245, 0.1), 0 4px 6px -2px rgba(0, 175, 245, 0.06);',
+        primaryDark:
+          '0 10px 15px -3px rgba(0, 117, 163, 0.1), 0 4px 6px -2px rgba(0, 117, 163, 0.06);',
+        success:
+          '0 10px 15px -3px rgba(92, 216, 90, 0.1), 0 4px 6px -2px rgba(92, 216, 90, 0.06);',
+        successDark:
+          '0 10px 15px -3px rgba(45, 182, 43, 0.1), 0 4px 6px -2px rgba(45, 182, 43, 0.06);',
+        danger:
+          '0 10px 15px -3px rgba(255, 90, 95, 0.1), 0 4px 6px -2px rgba(255, 90, 95, 0.06);',
+      },
     },
   },
   variants: {},
