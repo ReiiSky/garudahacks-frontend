@@ -19,6 +19,16 @@ module.exports = {
         success: '#5CD85A',
         danger: '#FF5A5F',
       },
+      boxShadow: {
+        primary:
+          '0 4px 6px -1px rgba(0, 175, 245, 0.1), 0 2px 4px -1px rgba(0, 175, 245, 0.06);',
+        primaryDark:
+          '0 4px 6px -1px rgba(0, 117, 163, 0.1), 0 2px 4px -1px rgba(0, 117, 163, 0.06);',
+        success:
+          '0 4px 6px -1px rgba(92, 216, 90, 0.1), 0 2px 4px -1px rgba(92, 216, 90, 0.06);',
+        danger:
+          '0 4px 6px -1px rgba(255, 90, 95, 0.1), 0 2px 4px -1px rgba(255, 90, 95, 0.06);',
+      },
     },
   },
   variants: {},
