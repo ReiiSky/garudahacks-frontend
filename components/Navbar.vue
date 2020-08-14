@@ -12,7 +12,7 @@
           class="hidden md:flex md:justify-between md:items-center md:space-x-6"
         >
           <n-link to="/login">Masuk</n-link>
-          <n-link to="/register">
+          <n-link to="/roles">
             <Button>Daftar</Button>
           </n-link>
         </div>
