@@ -11,8 +11,10 @@
         <div
           class="hidden md:flex md:justify-between md:items-center md:space-x-6"
         >
-          <n-link to="/">Home</n-link>
-          <n-link to="/about">About</n-link>
+          <n-link to="/login">Masuk</n-link>
+          <n-link to="/register">
+            <Button>Daftar</Button>
+          </n-link>
         </div>
         <div class="block md:hidden">
           <button @click="changeNavState">
@@ -22,8 +24,10 @@
       </div>
       <div class="md:hidden" :class="isOpened ? 'block' : 'hidden'">
         <div class="flex flex-col space-y-4 mt-2">
-          <n-link to="/">Link 1</n-link>
-          <n-link to="/about">About</n-link>
+          <n-link to="/login">Masuk</n-link>
+          <n-link to="/register">
+            <Button>Daftar</Button>
+          </n-link>
         </div>
       </div>
     </Container>
