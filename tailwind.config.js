@@ -6,22 +6,19 @@
  */
 module.exports = {
   theme: {
-    fontSize: {
-      xs: '.75rem',
-      sm: '.875rem',
-      tiny: '.875rem',
-      base: '1rem',
-      lg: '1.125rem',
-      xl: '1.25rem',
-      '2xl': '1.5rem',
-      '3xl': '1.875rem',
-      '4xl': '2.25rem',
-      '5xl': '3rem',
-      '6xl': '4rem',
-      '7xl': '5rem',
-      '8xl': '6rem',
-      '9xl': '7rem',
-      '10xl': '8rem',
+    extend: {
+      fontSize: {
+        '7xl': '5rem',
+        '8xl': '6rem',
+        '9xl': '7rem',
+        '10xl': '8rem',
+      },
+      colors: {
+        primary: '#00AFF5',
+        primaryDark: '#0075A3',
+        success: '#5CD85A',
+        danger: '#FF5A5F',
+      },
     },
   },
   variants: {},
