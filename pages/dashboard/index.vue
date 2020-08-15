@@ -1,9 +1,9 @@
 <template>
   <Container class="mt-24">
-    <Fragment v-if="$store.state.user.role === role.UMKM">
+    <Fragment v-if="$auth.user.profile.role === role.SBO">
       <Umkm />
     </Fragment>
-    <Fragment v-if="$store.state.user.role === role.PERUSAHAAN">
+    <Fragment v-if="$auth.user.profile.role === role.COMPANY">
       <Perusahaan />
     </Fragment>
   </Container>
@@ -15,16 +15,17 @@ import { Fragment } from 'vue-fragment'
 import Umkm from '~/components/dashboard/umkm/Umkm'
 import Perusahaan from '~/components/dashboard/perusahaan/Perusahaan'
 
-import { ROLE } from '~/store/user'
+import { ROLES } from '~/types/roles'
 
 export default {
+  middleware: 'auth',
   components: {
     Fragment,
     Umkm,
     Perusahaan,
   },
   data: () => ({
-    role: ROLE,
+    role: ROLES,
   }),
 }
 </script>

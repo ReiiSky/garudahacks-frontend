@@ -1,5 +1,5 @@
 <template>
-  <form enctype="multipart/form-data" @submit.prevent>
+  <form enctype="multipart/form-data" @submit.prevent="submitRequest">
     <div class="flex flex-wrap">
       <div class="w-full md:w-1/2">
         <h3 class="font-bold text-xl md:text-4xl mb-12">
@@ -13,8 +13,10 @@
           >
           <input
             id="product-name"
+            v-model="productName"
             class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
             type="text"
+            required
           />
         </div>
         <div class="mb-6">
@@ -25,7 +27,9 @@
           >
           <textarea
             id="description"
+            v-model="description"
             class="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:border-gray-700"
+            required
           ></textarea>
         </div>
         <div class="mb-6">
@@ -34,8 +38,10 @@
           >
           <input
             id="stock"
+            v-model="totalStock"
             type="number"
             class="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:border-gray-700"
+            required
           />
         </div>
       </div>
@@ -60,5 +66,23 @@
 <script>
 export default {
   name: 'MakeRequestForm',
+  data: () => ({
+    productName: '',
+    description: '',
+    totalStock: 0,
+  }),
+  methods: {
+    async submitRequest() {
+      const response = await this.$axios.post('/api/v1/com/request', {
+        productName: this.productName,
+        description: this.description,
+        totalStock: Number(this.totalStock),
+      })
+
+      if (response.status === 201) {
+        this.$router.push('/dashboard')
+      }
+    },
+  },
 }
 </script>

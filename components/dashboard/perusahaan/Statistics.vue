@@ -42,22 +42,22 @@ export default {
     totalIncome: 1000000,
     requests: [
       {
-        productName: 'Cakwe',
+        productName: 'Potato',
         companyName: 'PT Sumber Solusindo Pratama',
         stocks: 2,
         pricePerUnit: 2000000,
         progressFinished: false,
       },
       {
-        productName: 'Cakwe',
-        companyName: 'PT Sumber Solusindo Pratama',
+        productName: 'Leather Shoe',
+        companyName: 'PT Tripantero',
         stocks: 2,
         pricePerUnit: 2000000,
         progressFinished: true,
       },
       {
-        productName: 'Cakwe',
-        companyName: 'PT Sumber Solusindo Pratama',
+        productName: 'Jacket',
+        companyName: 'PT GO-JEK Indonesia',
         stocks: 2,
         pricePerUnit: 2000000,
         progressFinished: false,

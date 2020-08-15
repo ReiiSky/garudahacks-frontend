@@ -31,7 +31,12 @@
               {{ $currency.format(proposal.pricePerUnit * proposal.stocks) }}
               <small class="font-normal text-gray-700">Total Funding</small>
             </p>
-            <Button size="full" class="mt-8">Accept Proposal</Button>
+            <Button
+              size="full"
+              class="mt-8"
+              @click="$emit('delete-incoming-proposal', proposal.id)"
+              >Accept Proposal</Button
+            >
           </div>
         </div>
       </div>

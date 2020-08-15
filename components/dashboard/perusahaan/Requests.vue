@@ -10,7 +10,7 @@
       </n-link>
     </div>
     <div class="w-full mt-12">
-      <div class="flex flex-wrap items-center">
+      <div v-if="!$fetchState.pending" class="flex flex-wrap items-center">
         <div
           v-for="request in requests"
           :key="request.id"
@@ -33,53 +33,15 @@ export default {
     PlusIcon,
     RequestItem,
   },
-  data() {
-    return {
-      requests: [
-        {
-          id: 1,
-          name: 'Kachang Ijo',
-          bg: '008000',
-          company: 'pt.kachang ijijo',
-          stock: 27,
-        },
-        {
-          id: 2,
-          name: 'Kachang Merah',
-          bg: 'ff0000',
-          company: 'pt.kachang merah',
-          stock: 11,
-        },
-        {
-          id: 3,
-          name: 'Kachang Putih',
-          bg: 'fff',
-          company: 'pt.kachang putih',
-          stock: 57,
-        },
-        {
-          id: 4,
-          name: 'Kachang Hitam',
-          bg: '000000',
-          company: 'pt.kachang hitam',
-          stock: 33,
-        },
-        {
-          id: 5,
-          name: 'Kachang Pink',
-          bg: 'ffc0cb',
-          company: 'pt.kachang pink',
-          stock: 342,
-        },
-      ],
-    }
+  async fetch() {
+    const {
+      data: { RequestList: list },
+    } = await this.$axios.post('/api/v1/com/request/list')
+
+    this.requests = list
   },
+  data: () => ({
+    requests: [],
+  }),
 }
 </script>
-
-<style scoped>
-.card {
-  width: 16rem;
-  height: auto;
-}
-</style>
