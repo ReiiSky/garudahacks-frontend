@@ -21,7 +21,6 @@ export default {
 
   plugins: [
     '~/plugins/click-outside',
-    '~/plugins/vue-fragment',
     { src: '~/plugins/vue-carousel', ssr: false },
   ],
 
