@@ -45,7 +45,6 @@
 <script>
 import { ChevronLeftIcon } from 'vue-feather-icons'
 export default {
-  middleware: 'umkm',
   components: {
     ChevronLeftIcon,
   },
