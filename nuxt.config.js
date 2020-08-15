@@ -49,6 +49,7 @@ export default {
           },
           logout: { url: '/api/v1/logout', method: 'post' },
         },
+        autoFetchUser: false,
       },
     },
   },

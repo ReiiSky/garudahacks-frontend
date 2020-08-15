@@ -56,11 +56,12 @@ export default {
   methods: {
     async login() {
       const response = await this.$auth.loginWith('local', {
-        email: this.email,
-        password: this.password,
+        data: { email: this.email, password: this.password },
       })
 
-      console.log(response)
+      if (response.status === 200) {
+        this.$router.push('/dashboard')
+      }
     },
   },
 }
