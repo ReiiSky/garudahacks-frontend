@@ -1,19 +1,18 @@
-/* eslint-disable prettier/prettier */
 <template>
-  <div>
+  <Fragment>
     <div class="mt-12">
-      <carousel
-        :per-page="1"
-        :mouse-drag="false"
-        :pagination-color="'#c5c5c5'"
-        :pagination-position="'bottom-overlay'"
-        :pagination-active-color="'#00aff5'"
-      >
+      <carousel :per-page="1" :auto-play="true" :pagination-enabled="false">
         <slide>
-          <img src="~/assets/images/lan_umkm-1.jpg" class="carousel-image" />
+          <img
+            src="~/assets/images/lan_umkm-1.jpg"
+            class="w-full carousel-image object-cover"
+          />
         </slide>
         <slide>
-          <img src="~/assets/images/lan_umkm-1.jpg" class="carousel-image" />
+          <img
+            src="~/assets/images/lan_umkm-1.jpg"
+            class="w-full carousel-image object-cover"
+          />
         </slide>
       </carousel>
     </div>
@@ -24,14 +23,16 @@
         </div>
       </div>
     </Container>
-  </div>
+  </Fragment>
 </template>
 
 <script>
+import { Fragment } from 'vue-fragment'
 import Hero from '~/components/home/Hero'
 
 export default {
   components: {
+    Fragment,
     Hero,
   },
 }
@@ -39,7 +40,6 @@ export default {
 
 <style scoped>
 .carousel-image {
-  width: 100%;
-  height: 35em !important;
+  height: 36em !important;
 }
 </style>
