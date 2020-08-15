@@ -16,29 +16,15 @@
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
               for="fullname"
-              >Johnny Doe</label
+              >Full Name</label
             >
             <input
               id="fullname"
+              v-model="name"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
               type="text"
               placeholder="fullname"
             />
-          </div>
-          <div v-if="this.$route.query.as === 'company'">
-            <div class="mb-4">
-              <label
-                class="block text-gray-700 text-sm font-bold mb-2"
-                for="company-name"
-                >Company Name</label
-              >
-              <input
-                id="company-name"
-                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
-                type="text"
-                placeholder="company name"
-              />
-            </div>
           </div>
           <div class="mb-4">
             <label
@@ -48,6 +34,7 @@
             >
             <input
               id="email"
+              v-model="email"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
               type="text"
               placeholder="example@email.com"
@@ -61,6 +48,7 @@
             >
             <input
               id="company-name"
+              v-model="organizationName"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
               type="text"
               placeholder="CV. Maju Jaya"
@@ -74,6 +62,7 @@
             >
             <input
               id="password"
+              v-model="password"
               class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
               type="password"
               placeholder="************"
