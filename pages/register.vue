@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center mt-32">
     <div class="register-role-info w-1/4">
-      <h3 class="lg:text-3xl">Anda Mendaftar Sebagai {{ register_as }}</h3>
+      <h3 class="lg:text-3xl">You are registered as {{ register_as }}</h3>
       <div class="roles ml-12">
         <ul v-for="data in datas.roles" :key="data.id">
           <li>{{ data }}</li>
@@ -10,19 +10,34 @@
     </div>
     <div class="w-full max-w-sm">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h3 class="lg:text-3xl text-primary text-center">Daftar</h3>
+        <h3 class="lg:text-3xl text-primary text-center">Register</h3>
         <div class="mb-4 mt-12">
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="fullname"
-            >Nama Anda</label
+            >Fullname</label
           >
           <input
             id="fullname"
             class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             type="text"
-            placeholder="nama anda"
+            placeholder="fullname"
           />
+        </div>
+        <div v-if="this.$route.query.as === 'company'">
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="company-name"
+              >Company Name</label
+            >
+            <input
+              id="company-name"
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              type="text"
+              placeholder="company name"
+            />
+          </div>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="email"
@@ -39,7 +54,7 @@
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="password"
-            >Kata sandi</label
+            >Password</label
           >
           <input
             id="password"
@@ -50,7 +65,7 @@
           <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
         </div>
         <div class="flex items-center justify-between">
-          <Button class="w-full">Daftar</Button>
+          <Button class="w-full">Sign up</Button>
         </div>
       </form>
     </div>
@@ -82,16 +97,6 @@ export default {
               one: 'Beli hasil tanam, lalu jual',
               two: 'Beli hasil tanam, lalu jual',
               three: 'Beli hasil tanam, lalu jual',
-            },
-          }
-          break
-        case 'investor':
-          this.datas = {
-            as: 'Investor',
-            roles: {
-              one: 'Modalin yg UMKM',
-              two: 'Modalin yg UMKM',
-              three: 'Modalin yg UMKM',
             },
           }
           break

@@ -2,7 +2,7 @@
   <div class="flex justify-center mt-32">
     <div class="w-full max-w-sm">
       <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h3 class="lg:text-3xl text-primary text-center">Masuk</h3>
+        <h3 class="lg:text-3xl text-primary text-center">Sign in</h3>
         <div class="mb-4 mt-12">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="email"
             >Email</label
@@ -18,7 +18,7 @@
           <label
             class="block text-gray-700 text-sm font-bold mb-2"
             for="password"
-            >Kata sandi</label
+            >Password</label
           >
           <input
             id="password"
@@ -29,7 +29,7 @@
           <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
         </div>
         <div class="flex items-center justify-between">
-          <Button class="w-full">Masuk</Button>
+          <Button class="w-full">Sign in</Button>
         </div>
       </form>
     </div>
