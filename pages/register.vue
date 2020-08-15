@@ -50,7 +50,7 @@
           <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
         </div>
         <div class="flex items-center justify-between">
-          <Button :size="'full'">Daftar</Button>
+          <Button class="w-full">Daftar</Button>
         </div>
       </form>
     </div>
