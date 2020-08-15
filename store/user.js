@@ -4,5 +4,5 @@ export const ROLE = {
 }
 
 export const state = () => ({
-  role: ROLE.UMKM,
+  role: ROLE.PERUSAHAAN,
 })

@@ -18,7 +18,7 @@
           </h1>
         </button>
       </div>
-      <hr class="mt-4 border border-gray-400 rounded-md" />
+      <hr class="mt-4 border-gray-400 rounded-md" />
     </div>
     <keep-alive>
       <component :is="currentComponent"></component>
@@ -30,7 +30,7 @@
 import { Fragment } from 'vue-fragment'
 import Statistics from '~/components/dashboard/perusahaan/Statistics'
 import Requests from '~/components/dashboard/perusahaan/Requests'
-import SentProposals from '~/components/dashboard/perusahaan/SentProposals'
+import AvailableProposals from '~/components/dashboard/perusahaan/AvailableProposals'
 
 export default {
   name: 'Perusahaan',
@@ -38,7 +38,7 @@ export default {
     Fragment,
     Statistics,
     Requests,
-    SentProposals,
+    AvailableProposals,
   },
   data: () => ({
     currentComponent: Statistics.name,
@@ -52,8 +52,8 @@ export default {
         component: Requests.name,
       },
       {
-        label: 'Sent Proposals',
-        component: SentProposals.name,
+        label: 'Available Proposals',
+        component: AvailableProposals.name,
       },
     ],
   }),
