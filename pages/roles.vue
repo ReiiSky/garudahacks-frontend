@@ -9,9 +9,9 @@
         praesentium possimus tempora odio.
       </p>
       <div
-        class="container mx-auto px-4 sm:px-10 lg:px-15 mt-24 flex flex-wrap justify-between"
+        class="container mx-auto px-4 sm:px-10 lg:px-15 mt-24 flex flex-wrap justify-center"
       >
-        <div id="umkm" class="card bg-white rounded-lg shadow-lg">
+        <div id="umkm" class="card bg-white rounded-lg shadow-lg mx-8">
           <img
             src="~/assets/images/umkm.jpg"
             alt="umkm image"
@@ -30,7 +30,7 @@
             </Button>
           </div>
         </div>
-        <div id="company" class="card bg-white rounded-lg shadow-lg">
+        <div id="company" class="card bg-white rounded-lg shadow-lg mx-8">
           <img
             src="~/assets/images/company.jpg"
             alt="company image"
