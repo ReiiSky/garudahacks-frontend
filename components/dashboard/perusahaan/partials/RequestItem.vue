@@ -2,7 +2,7 @@
   <div class="bg-white rounded-lg overflow-hidden shadow-lg">
     <img
       class="w-full h-full md:h-64 object-cover"
-      :src="`https://source.unsplash.com/random?tag=${request.name}`"
+      :src="`https://source.unsplash.com/featured/?${request.productName}`"
     />
     <div class="px-6 py-4 text-center">
       <h1 class="font-bold text-xl mb-2">{{ request.productName }}</h1>
