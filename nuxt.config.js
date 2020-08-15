@@ -19,7 +19,11 @@ export default {
 
   css: [],
 
-  plugins: ['~/plugins/click-outside', '~/plugins/currency'],
+  plugins: [
+    '~/plugins/click-outside',
+    '~/plugins/currency',
+    { src: '~/plugins/vue-carousel', ssr: false },
+  ],
 
   // Auto-Imports all components inside the common components directory
   components: ['~/components/common'],
@@ -30,7 +34,7 @@ export default {
 
   // Axios configurations
   axios: {
-    baseURL: process.env.NODE_ENV === 'production' ? '' : '',
+    baseURL: 'http://18.222.98.78:6007/',
   },
 
   // Auth strategies
@@ -38,9 +42,12 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '', method: 'post', propertyName: 'token' },
-          logout: { url: '', method: 'post' },
-          user: { url: '', method: 'get', propertyName: 'user' },
+          login: {
+            url: '/api/v1/signin',
+            method: 'post',
+            propertyName: 'token',
+          },
+          logout: { url: '/api/v1/logout', method: 'post' },
         },
       },
     },
@@ -51,7 +58,7 @@ export default {
 
   // Public runtime configurations
   publicRuntimeConfig: {
-    appName: 'Nuxt Boilerplate',
+    appName: 'microfund',
   },
 
   loading: { color: '#000' },

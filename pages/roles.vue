@@ -1,72 +1,54 @@
 <template>
-  <div>
-    <Container class="mt-24 mb-12">
-      <h1 class="lg:text-4xl">Pilih role anda</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum est
-        distinctio veritatis temporibus nemo at doloribus quidem inventore
-        impedit maiores fugiat aut asperiores, omnis repudiandae neque
-        praesentium possimus tempora odio.
-      </p>
-      <div
-        class="container mx-auto px-4 sm:px-12 lg:px-20 mt-24 role-card flex flex-wrap justify-between"
-      >
-        <div class="card umkm">
-          <h3 class="lg:text-2xl text-center">UMKM</h3>
-          <p class="px-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Exercitationem nostrum minus hic sunt tempore aspernatur tempora
-            quis atque.
-          </p>
-          <p class="mt-12 text-center">Daftar sebagai</p>
-          <div class="flex items-center justify-between">
-            <Button :size="'full'">
-              <a href="/register?as=umkm">UMKM</a>
-            </Button>
-          </div>
-        </div>
-        <div class="card investor">
-          <h3 class="lg:text-2xl text-center">Pemodal</h3>
-          <p class="px-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Exercitationem nostrum minus hic sunt tempore aspernatur tempora
-            quis atque.
-          </p>
-          <p class="mt-12 text-center">Daftar sebagai</p>
-          <div class="flex items-center justify-between">
-            <Button :size="'full'">
-              <a href="/register?as=investor">Pemodal</a>
-            </Button>
-          </div>
-        </div>
-        <div class="card company">
-          <h3 class="lg:text-2xl text-center">Perusahaan</h3>
-          <p class="px-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Exercitationem nostrum minus hic sunt tempore aspernatur tempora
-            quis atque.?
-          </p>
-          <p class="mt-12 text-center">Daftar sebagai</p>
-          <div class="flex items-center justify-between">
-            <Button :size="'full'">
-              <a href="/register?as=company">Perusahaan</a>
-            </Button>
-          </div>
+  <Container class="mt-24 mb-12">
+    <div class="flex flex-wrap">
+      <div class="w-full">
+        <h1 class="text-center text-xl md:text-4xl">Choose your role</h1>
+      </div>
+      <div class="w-full mt-12">
+        <div
+          class="flex flex-col md:flex-row justify-around items-center md:space-x-32"
+        >
+          <button @click="setRole('SBO')">
+            <div
+              class="bg-white rounded overflow-hidden shadow-lg duration-200 hover:shadow-2xl"
+            >
+              <img
+                class="w-full h-full md:h-64 object-cover"
+                src="~/assets/images/umkm.jpg"
+              />
+              <div class="px-6 py-4 text-center">
+                <h1 class="font-bold text-xl mb-2">Small Business Owner</h1>
+              </div>
+            </div>
+          </button>
+          <button @click="setRole('COM')">
+            <div
+              class="mt-8 md:mt-0 bg-white rounded overflow-hidden shadow-lg duration-200 hover:shadow-2xl"
+            >
+              <img
+                class="w-full h-full md:h-64 object-cover"
+                src="~/assets/images/company-role.jpg"
+              />
+              <div class="px-6 py-4 text-center">
+                <h1 class="font-bold text-xl mb-2">Company</h1>
+              </div>
+            </div>
+          </button>
         </div>
       </div>
-    </Container>
-  </div>
+    </div>
+  </Container>
 </template>
 
 <script>
 export default {
   name: 'Roles',
+  methods: {
+    setRole(role) {
+      this.$store.commit('register/setSelectedRole', role)
+
+      this.$router.push('/register')
+    },
+  },
 }
 </script>
-
-<style scoped>
-.card {
-  width: 14rem;
-  height: auto;
-}
-</style>
