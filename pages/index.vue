@@ -3,20 +3,14 @@
     <div class="mt-12">
       <carousel :per-page="1" :auto-play="true" :pagination-enabled="false">
         <slide>
-          <img
-            src="~/assets/images/lan_umkm-1.jpg"
-            class="w-full carousel-image object-cover"
-          />
+          <img src="~/assets/images/lan_umkm-1.jpg" class="carousel-img" />
         </slide>
         <slide>
-          <img
-            src="~/assets/images/lan_umkm-1.jpg"
-            class="w-full carousel-image object-cover"
-          />
+          <img src="~/assets/images/lan_umkm-1.jpg" class="carousel-img" />
         </slide>
       </carousel>
     </div>
-    <Container class="mt-24 mb-24">
+    <Container class="my-24">
       <div class="flex flex-wrap">
         <div class="w-full">
           <Hero />
@@ -38,8 +32,15 @@ export default {
 }
 </script>
 
-<style scoped>
-.carousel-image {
-  height: 36em !important;
+<style lang="scss" scoped>
+.carousel-img {
+  height: 36rem;
+
+  @media (max-width: 768px) {
+    height: 16rem;
+  }
+
+  @apply w-full;
+  @apply object-cover;
 }
 </style>
