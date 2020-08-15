@@ -29,7 +29,7 @@
           <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
         </div>
         <div class="flex items-center justify-between">
-          <Button :size="'full'">Masuk</Button>
+          <Button class="w-full">Masuk</Button>
         </div>
       </form>
     </div>
