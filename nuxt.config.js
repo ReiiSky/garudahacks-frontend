@@ -34,7 +34,7 @@ export default {
 
   // Axios configurations
   axios: {
-    baseURL: process.env.NODE_ENV === 'production' ? '' : '',
+    baseURL: 'http://18.222.98.78:6007/',
   },
 
   // Auth strategies
@@ -42,9 +42,12 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '', method: 'post', propertyName: 'token' },
-          logout: { url: '', method: 'post' },
-          user: { url: '', method: 'get', propertyName: 'user' },
+          login: {
+            url: '/api/v1/signin',
+            method: 'post',
+            propertyName: 'token',
+          },
+          logout: { url: '/api/v1/logout', method: 'post' },
         },
       },
     },

@@ -8,7 +8,7 @@
         <div
           class="flex flex-col md:flex-row justify-around items-center md:space-x-32"
         >
-          <n-link to="/register?as=umkm">
+          <button @click="setRole('SBO')">
             <div
               class="bg-white rounded overflow-hidden shadow-lg duration-200 hover:shadow-2xl"
             >
@@ -20,8 +20,8 @@
                 <h1 class="font-bold text-xl mb-2">Small Business Owner</h1>
               </div>
             </div>
-          </n-link>
-          <n-link to="/register?as=company">
+          </button>
+          <button @click="setRole('COM')">
             <div
               class="mt-8 md:mt-0 bg-white rounded overflow-hidden shadow-lg duration-200 hover:shadow-2xl"
             >
@@ -33,7 +33,7 @@
                 <h1 class="font-bold text-xl mb-2">Company</h1>
               </div>
             </div>
-          </n-link>
+          </button>
         </div>
       </div>
     </div>
@@ -43,5 +43,12 @@
 <script>
 export default {
   name: 'Roles',
+  methods: {
+    setRole(role) {
+      this.$store.commit('register/setSelectedRole', role)
+
+      this.$router.push('/register')
+    },
+  },
 }
 </script>

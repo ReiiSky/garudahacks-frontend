@@ -1,30 +1,58 @@
 <template>
-  <div class="flex justify-center mt-32">
-    <div class="register-role-info w-1/4">
-      <h3 class="lg:text-3xl">You are registered as {{ register_as }}</h3>
-      <div class="roles ml-12">
-        <ul v-for="data in datas.roles" :key="data.id">
-          <li>{{ data }}</li>
-        </ul>
-      </div>
-    </div>
-    <div class="w-full max-w-sm">
-      <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <h3 class="lg:text-3xl text-primary text-center">Register</h3>
-        <div class="mb-4 mt-12">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="fullname"
-            >Fullname</label
-          >
-          <input
-            id="fullname"
-            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            placeholder="fullname"
-          />
-        </div>
-        <div v-if="this.$route.query.as === 'company'">
+  <Container class="mt-24">
+    <div class="flex flex-wrap justify-center">
+      <div class="w-full max-w-sm">
+        <form
+          class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4"
+          @submit.prevent="register"
+        >
+          <h3 class="font-medium text-center text-2xl md:text-4xl mb-12">
+            Sign up to
+            <span class="font-bold">
+              microfund<span class="text-primary">.</span>
+            </span>
+          </h3>
+          <div class="mb-4 mt-12">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="fullname"
+              >Johnny Doe</label
+            >
+            <input
+              id="fullname"
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
+              type="text"
+              placeholder="fullname"
+            />
+          </div>
+          <div v-if="this.$route.query.as === 'company'">
+            <div class="mb-4">
+              <label
+                class="block text-gray-700 text-sm font-bold mb-2"
+                for="company-name"
+                >Company Name</label
+              >
+              <input
+                id="company-name"
+                class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
+                type="text"
+                placeholder="company name"
+              />
+            </div>
+          </div>
+          <div class="mb-4">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="email"
+              >Email</label
+            >
+            <input
+              id="email"
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
+              type="text"
+              placeholder="example@email.com"
+            />
+          </div>
           <div class="mb-4">
             <label
               class="block text-gray-700 text-sm font-bold mb-2"
@@ -33,83 +61,61 @@
             >
             <input
               id="company-name"
-              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
               type="text"
-              placeholder="company name"
+              placeholder="CV. Maju Jaya"
             />
           </div>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="email"
-            >Email</label
-          >
-          <input
-            id="fullname"
-            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            type="text"
-            placeholder="email"
-          />
-        </div>
-        <div class="mb-6">
-          <label
-            class="block text-gray-700 text-sm font-bold mb-2"
-            for="password"
-            >Password</label
-          >
-          <input
-            id="password"
-            class="appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            type="password"
-            placeholder="************"
-          />
-          <!-- <p class="text-red-500 text-xs italic">Please choose a password.</p> -->
-        </div>
-        <div class="flex items-center justify-between">
-          <Button class="w-full">Sign up</Button>
-        </div>
-      </form>
+          <div class="mb-6">
+            <label
+              class="block text-gray-700 text-sm font-bold mb-2"
+              for="password"
+              >Password</label
+            >
+            <input
+              id="password"
+              class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700"
+              type="password"
+              placeholder="************"
+            />
+          </div>
+          <div class="flex items-center justify-between">
+            <Button class="w-full">Sign up</Button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
+  </Container>
 </template>
 
 <script>
 export default {
   name: 'Register',
-  data() {
-    return {
-      register_as: '',
-      datas: '',
+  middleware({ store, redirect }) {
+    if (!store.state.register.selectedRole) {
+      redirect('/roles')
     }
   },
-  mounted() {
-    // eslint-disable-next-line no-console
-    this.register_as = this.$route.query.as
-    this.registerAs(this.register_as)
+  data() {
+    return {
+      name: '',
+      email: '',
+      organizationName: '',
+      password: '',
+    }
   },
   methods: {
-    registerAs(as) {
-      // eslint-disable-next-line eqeqeq
-      switch (as) {
-        case 'company':
-          this.datas = {
-            as: 'Company',
-            roles: {
-              one: 'Beli hasil tanam, lalu jual',
-              two: 'Beli hasil tanam, lalu jual',
-              three: 'Beli hasil tanam, lalu jual',
-            },
-          }
-          break
-        case 'umkm':
-          this.datas = {
-            as: 'UMKM',
-            roles: {
-              one: 'KERJA KERJA KERJA',
-              two: 'Cari modal dari investor',
-              three: 'Cari perusahaan yg mau jual',
-            },
-          }
-          break
+    async register() {
+      const response = await this.$axios.post('/api/v1/signup', {
+        name: this.name,
+        email: this.email,
+        organizationName: this.organizationName,
+        password: this.password,
+        role: this.$store.state.register.selectedRole,
+      })
+
+      if (response.status === 201) {
+        this.$router.push('/login')
       }
     },
   },
