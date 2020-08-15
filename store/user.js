@@ -1,6 +1,5 @@
 export const ROLE = {
   UMKM: 'umkm',
-  PEMODAL: 'pemodal',
   PERUSAHAAN: 'perusahaan',
 }
 

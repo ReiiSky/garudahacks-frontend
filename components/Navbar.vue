@@ -11,9 +11,9 @@
         <div
           class="hidden md:flex md:justify-between md:items-center md:space-x-6"
         >
-          <n-link to="/login">Masuk</n-link>
+          <n-link to="/login">Sign In</n-link>
           <n-link to="/roles">
-            <Button>Daftar</Button>
+            <Button>Join</Button>
           </n-link>
         </div>
         <div class="block md:hidden">
@@ -24,9 +24,9 @@
       </div>
       <div class="md:hidden" :class="isOpened ? 'block' : 'hidden'">
         <div class="flex flex-col space-y-4 mt-2">
-          <n-link to="/login">Masuk</n-link>
+          <n-link to="/login">Sign In</n-link>
           <n-link to="/register">
-            <Button>Daftar</Button>
+            <Button>Join</Button>
           </n-link>
         </div>
       </div>
