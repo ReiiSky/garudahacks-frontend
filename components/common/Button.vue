@@ -1,14 +1,9 @@
 <template>
   <button
     class="rounded-md font-medium duration-75 focus:outline-none focus:border-transparent"
-    :class="[
-      btnSize,
-      textColor,
-      bgColor,
-      shadow,
-      `hover:${bgColorHover}`,
-      hover ? `hover:${hover}` : null,
-    ]"
+    :class="[btnSize, ...btnClasses]"
+    :disabled="disabled"
+    @click="$emit('click')"
   >
     <slot></slot>
   </button>
@@ -21,7 +16,7 @@ export default {
     size: {
       type: String,
       validator(value) {
-        return ['sm', 'normal', 'md', 'lg', 'xl'].includes(value)
+        return ['sm', 'normal', 'md', 'lg', 'xl', 'full'].includes(value)
       },
       default: 'normal',
     },
@@ -30,7 +25,7 @@ export default {
       default: 'bg-primary',
     },
     bgColorHover: {
-      type: String,
+      type: [String, Boolean],
       default: 'bg-primaryDark',
     },
     hover: {
@@ -42,8 +37,12 @@ export default {
       default: 'text-white',
     },
     shadow: {
-      type: String,
+      type: [String, Boolean],
       default: 'shadow-primary',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   computed: {
@@ -60,8 +59,24 @@ export default {
       if (this.size === 'xl') {
         return 'px-12 py-5'
       }
+      if (this.size === 'full') {
+        return 'py-2 w-full'
+      }
 
       return 'px-6 py-2'
+    },
+    btnClasses() {
+      if (this.disabled) {
+        return ['bg-gray-400', 'text-gray-600', 'cursor-default']
+      }
+
+      return [
+        this.textColor,
+        this.bgColor,
+        this.shadow,
+        `hover:${this.bgColorHover}`,
+        this.hover ? `hover:${this.hover}` : null,
+      ]
     },
   },
 }

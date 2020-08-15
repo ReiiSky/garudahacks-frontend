@@ -21,6 +21,7 @@ export default {
 
   plugins: [
     '~/plugins/click-outside',
+    '~/plugins/currency',
     { src: '~/plugins/vue-carousel', ssr: false },
   ],
 
