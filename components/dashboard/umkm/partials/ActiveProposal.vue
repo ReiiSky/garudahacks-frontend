@@ -1,6 +1,17 @@
 <template>
   <Fragment>
-    <div class="px-8 py-6 bg-white shadow-lg rounded-lg">
+    <div
+      v-if="hideActiveProposal"
+      class="px-8 py-6 bg-success bg-opacity-50 shadow-success rounded-lg"
+    >
+      <h1 class="font-bold text-successDark text-2xl md:text-4xl">
+        Transaction Completed!
+      </h1>
+    </div>
+    <div
+      class="px-8 py-6 bg-white shadow-lg rounded-lg"
+      :class="{ hidden: hideActiveProposal }"
+    >
       <h1 class="font-bold text-primary text-2xl md:text-4xl">
         {{ productName }}
       </h1>
@@ -55,7 +66,7 @@
               </div>
             </div>
           </div>
-          <Button size="full">Submit Report</Button>
+          <Button size="full" @click="finishProgress">Submit Report</Button>
         </div>
       </div>
       <hr class="my-4 md:my-8 border-gray-400 rounded-md" />
@@ -65,19 +76,21 @@
           Products successfully produced
         </h1>
         <div class="flex flex-wrap">
-          <div class="w-full md:w-4/5 bg-gray-400 shadow-md rounded-full">
+          <div class="w-full md:w-4/5 bg-gray-400 rounded-full">
             <div
-              class="py-2 bg-primary shadow-primary rounded-tl-full rounded-bl-full text-white text-center"
-              style="width: 50%;"
+              class="py-2 bg-primary shadow-primary rounded-full text-white text-center duration-200"
+              :style="{ width: `${progress}%` }"
             >
-              2 / 4
+              &nbsp;
             </div>
           </div>
           <div class="w-full mt-6 md:w-1/5 md:mt-0 md:pl-6">
             <Button v-if="!progressFinished" size="full" disabled
               >Finish</Button
             >
-            <Button v-else size="full">Finish</Button>
+            <Button v-else size="full" @click="hideActiveProposal = true"
+              >Finish</Button
+            >
           </div>
         </div>
       </div>
@@ -97,12 +110,14 @@ export default {
     MinusIcon,
   },
   data: () => ({
-    productName: 'Cakwe',
+    productName: 'Potato',
     companyName: 'PT Sumber Solusindo Pratama',
-    initialStocks: 2,
-    stocks: 2,
+    initialStocks: 24,
+    stocks: 24,
     pricePerUnit: 2000000,
     progressFinished: false,
+    progress: 75,
+    hideActiveProposal: false,
   }),
   computed: {
     totalFunding() {
@@ -118,6 +133,10 @@ export default {
         return
       }
       this.stocks--
+    },
+    finishProgress() {
+      this.progress = 100
+      this.progressFinished = true
     },
   },
 }

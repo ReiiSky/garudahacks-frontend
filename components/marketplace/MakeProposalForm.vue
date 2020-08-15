@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center">
     <div class="w-full max-w-md">
-      <form class="px-8 pt-6 pb-8 mb-4" @submit.prevent>
+      <form @submit.prevent="submitProposal">
         <h3 class="font-bold text-xl md:text-4xl mb-12">Create Proposal</h3>
         <div class="mb-6">
           <label
@@ -153,6 +153,19 @@ export default {
     },
     setShowOtherContractPeriodInput() {
       this.showOtherContractPeriodInput = true
+    },
+    async submitProposal() {
+      const response = await this.$axios.post('/api/v1/sbo/proposals/form', {
+        productName: this.productName,
+        description: this.productDescription,
+        contract: `${this.contractPeriod} bulan`,
+        unitPrice: Number(this.pricePerUnit),
+        stok: 5,
+      })
+
+      if (response.status === 200) {
+        this.$router.push('/dashboard')
+      }
     },
   },
 }

@@ -2,31 +2,20 @@
   <div class="bg-white rounded-lg overflow-hidden shadow-lg">
     <img
       class="w-full h-full md:h-64 object-cover"
-      :src="`https://source.unsplash.com/random?tag=${proposal.name}`"
+      :src="`https://source.unsplash.com/random?tag=${proposal.productName}`"
     />
-    <div class="px-6 py-4 text-center">
-      <h1 class="font-bold text-xl mb-2">{{ proposal.name }}</h1>
-      <div class="my-4">
-        <p class="text-gray-700 text-base">Price</p>
-        <p class="font-bold text-gray-700 text-base">
-          {{ $currency.format(proposal.price) }}
-        </p>
+    <div class="px-6 py-4 text-center break-words">
+      <div class="font-bold text-xl mb-2">{{ proposal.productName }}</div>
+      <div class="mb-2">
+        <p class="text-gray-700 text-base">{{ proposal.description }}</p>
       </div>
-      <div class="my-4">
-        <p class="font-medium text-gray-700 text-base">Profit Sharing</p>
-        <p class="font-bold text-gray-700 text-base">
-          {{ proposal.profit_sharing }}%
-        </p>
+      <div class="mb-4">
+        <p class="text-gray-700 text-base">Contract period</p>
+        <p class="text-gray-700 font-semibold">{{ proposal.contract }}</p>
       </div>
-      <div class="my-4">
-        <p class="font-medium text-gray-700 text-base">Contract Period</p>
-        <p class="font-bold text-gray-700 text-base">
-          {{ proposal.contract_period }}
-        </p>
-      </div>
-      <div class="my-4">
-        <p class="font-medium text-gray-700 text-base">Stock</p>
-        <p class="font-bold text-gray-700 text-base">{{ proposal.stock }}</p>
+      <div class="mb-4">
+        <p class="text-gray-700 text-base">Stock</p>
+        <p class="text-gray-700 font-semibold">{{ proposal.stok }}</p>
       </div>
     </div>
   </div>

@@ -5,16 +5,16 @@
       :src="`https://source.unsplash.com/random?tag=${request.name}`"
     />
     <div class="px-6 py-4 text-center">
-      <h1 class="font-bold text-xl mb-2">{{ request.name }}</h1>
+      <h1 class="font-bold text-xl mb-2">{{ request.productName }}</h1>
       <h4 class="font-medium text-lg text-gray-700 mb-2">
-        {{ request.company }}
+        {{ $auth.user.profile.organizationName }}
       </h4>
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2">
           <p class="font-medium text-lg">Stock</p>
         </div>
         <div class="w-full md:w-1/2">
-          <p class="font-medium text-lg">{{ request.stock }}</p>
+          <p class="font-medium text-lg">{{ request.totalStock }}</p>
         </div>
       </div>
     </div>

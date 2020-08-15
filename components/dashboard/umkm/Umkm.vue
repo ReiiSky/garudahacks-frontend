@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import { Fragment } from 'vue-fragment'
 import Statistics from '~/components/dashboard/umkm/Statistics'
 import Proposals from '~/components/dashboard/umkm/Proposals'
@@ -38,22 +39,31 @@ export default {
     Statistics,
     Proposals,
   },
-  data: () => ({
-    currentComponent: Statistics.name,
-    tabItems: [
-      {
-        label: 'Statistics',
-        component: Statistics.name,
-      },
-      {
-        label: 'Proposals',
-        component: Proposals.name,
-      },
-    ],
-  }),
+  data() {
+    return {
+      ...mapState(['dashboard']),
+      currentComponent: null,
+      tabItems: [
+        {
+          label: 'Statistics',
+          component: Statistics.name,
+        },
+        {
+          label: 'Proposals',
+          component: Proposals.name,
+        },
+      ],
+    }
+  },
+  created() {
+    this.currentComponent = this.dashboard.currentTab
+      ? this.dashboard.currentTab
+      : Statistics.name
+  },
   methods: {
     changeTab(tab) {
       this.currentComponent = tab
+      this.$store.commit('dashboard/setCurrentTab', tab)
     },
     isCurrentTab(tab) {
       return this.currentComponent === tab.component

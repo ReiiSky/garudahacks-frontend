@@ -1,36 +1,28 @@
 <template>
   <Fragment>
-    <h1 class="font-bold text-3xl text-primary text-center">Cara Kerja</h1>
+    <h1 class="font-bold text-6xl text-primary text-center">How it Works</h1>
     <div class="flex flex-wrap justify-between mt-5">
-      <div class="procedure box-1">
-        <p class="mt-5">Beli bibit</p>
-        <small>
-          Telusuri semua proyek pembiayaan kami. Pilih proyek pembiayaan yang
-          tepat sesuai dengan budget dan bagi hasil yang paling menarik bagi
-          Anda.
-        </small>
+      <div class="w-full md:w-1/4 break-words px-4">
+        <div class="p-6 bg-white rounded-lg shadow-lg">
+          <h1 class="font-bold text-2xl">Find your business partner</h1>
+        </div>
       </div>
-      <div class="procedure box-2">
-        <p class="mt-5">Pantau perkembangannya</p>
-        <small>
-          Dapatkan update foto, pertumbuhan, dan komentar terbaru dari para
-          surveyor yang kredibel di lapangan secara real time.
-        </small>
+      <div class="w-full md:w-1/4 break-words px-4">
+        <div class="p-6 bg-white rounded-lg shadow-lg">
+          <h1 class="font-bold text-2xl">
+            Wait for them to accept your partnership request
+          </h1>
+        </div>
       </div>
-      <div class="procedure box-3">
-        <p class="mt-5">Jual hasil panennya</p>
-        <small>
-          Semua hasil panen akan dijual ke partner yang telah bekerjasama dengan
-          yesz~.
-        </small>
+      <div class="w-full md:w-1/4 break-words px-4">
+        <div class="p-6 bg-white rounded-lg shadow-lg">
+          <h1 class="font-bold text-2xl">Make a deal about the product</h1>
+        </div>
       </div>
-      <div class="procedure box-4">
-        <p class="mt-5">Dapatkan bagi hasil</p>
-        <small>
-          Semua hasil penjualan dari petani akan dilakukan bagi hasil sesuai
-          dengan kesepakatan di setiap Proyek Pembiayaan antara pihak yang
-          mendanai dan para petaninya.
-        </small>
+      <div class="w-full md:w-1/4 break-words px-4">
+        <div class="p-6 bg-white rounded-lg shadow-lg">
+          <h1 class="font-bold text-2xl">Get the benefits</h1>
+        </div>
       </div>
     </div>
   </Fragment>
