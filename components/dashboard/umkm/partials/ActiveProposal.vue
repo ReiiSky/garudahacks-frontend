@@ -7,7 +7,7 @@
       <h4 class="font-medium text-gray-600 text-lg md:text-xl">
         {{ companyName }}
       </h4>
-      <hr class="my-8 border-gray-400 rounded-md" />
+      <hr class="my-4 md:my-8 border-gray-400 rounded-md" />
       <div class="flex flex-wrap">
         <div class="w-1/2">
           <p class="text-lg md:text-xl">Stock</p>
@@ -15,17 +15,17 @@
         </div>
         <div class="w-1/2">
           <p class="font-bold text-lg md:text-xl">{{ initialStocks }}</p>
-          <p class="font-bold text-lg md:text-xl">
+          <p class="font-bold text-base md:text-xl">
             {{ $currency.format(pricePerUnit) }}
           </p>
           <hr class="my-2" />
-          <p class="font-bold text-lg md:text-xl">
+          <p class="font-bold text-base md:text-xl">
             {{ $currency.format(totalFunding) }}
             <small class="font-normal text-gray-700">Total Funding</small>
           </p>
         </div>
       </div>
-      <hr class="my-8 border-gray-400 rounded-md" />
+      <hr class="my-4 md:my-8 border-gray-400 rounded-md" />
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2 md:pr-6">
           <h1 class="font-bold text-2xl md:text-3xl mb-6">Report</h1>
@@ -58,7 +58,7 @@
           <Button size="full">Submit Report</Button>
         </div>
       </div>
-      <hr class="my-8 border-gray-400 rounded-md" />
+      <hr class="my-4 md:my-8 border-gray-400 rounded-md" />
       <div class="w-full">
         <h1 class="font-bold text-2xl md:text-3xl mb-6">Progress</h1>
         <h1 class="font-medium text-lg md:text-xl mb-6">

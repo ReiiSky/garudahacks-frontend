@@ -22,8 +22,8 @@
       <h1 class="font-semibold text-2xl">Active Requests (3)</h1>
     </div>
     <div class="w-full mt-8">
-      <div v-for="n in 3" :key="n" class="mb-8">
-        <ActiveRequests />
+      <div v-for="(request, index) in requests" :key="index" class="mb-8">
+        <ActiveRequests :request="request" />
       </div>
     </div>
   </div>
@@ -40,6 +40,29 @@ export default {
   data: () => ({
     totalRequests: 4,
     totalIncome: 1000000,
+    requests: [
+      {
+        productName: 'Cakwe',
+        companyName: 'PT Sumber Solusindo Pratama',
+        stocks: 2,
+        pricePerUnit: 2000000,
+        progressFinished: false,
+      },
+      {
+        productName: 'Cakwe',
+        companyName: 'PT Sumber Solusindo Pratama',
+        stocks: 2,
+        pricePerUnit: 2000000,
+        progressFinished: true,
+      },
+      {
+        productName: 'Cakwe',
+        companyName: 'PT Sumber Solusindo Pratama',
+        stocks: 2,
+        pricePerUnit: 2000000,
+        progressFinished: false,
+      },
+    ],
   }),
 }
 </script>
