@@ -19,7 +19,9 @@
       </div>
       <hr class="mt-4 border border-gray-400 rounded-md" />
     </div>
-    <component :is="currentComponent"></component>
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
   </Fragment>
 </template>
 
@@ -36,15 +38,15 @@ export default {
     Proposals,
   },
   data: () => ({
-    currentComponent: Statistics,
+    currentComponent: Statistics.name,
     tabItems: [
       {
         label: 'Statistics',
-        component: Statistics,
+        component: Statistics.name,
       },
       {
         label: 'Proposals',
-        component: Proposals,
+        component: Proposals.name,
       },
     ],
   }),
