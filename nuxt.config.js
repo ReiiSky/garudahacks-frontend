@@ -19,7 +19,11 @@ export default {
 
   css: [],
 
-  plugins: ['~/plugins/click-outside', '~/plugins/vue-fragment'],
+  plugins: [
+    '~/plugins/click-outside',
+    '~/plugins/vue-fragment',
+    { src: '~/plugins/vue-carousel', ssr: false },
+  ],
 
   // Auto-Imports all components inside the common components directory
   components: ['~/components/common'],
@@ -51,7 +55,7 @@ export default {
 
   // Public runtime configurations
   publicRuntimeConfig: {
-    appName: 'Nuxt Boilerplate',
+    appName: 'microfund',
   },
 
   loading: { color: '#000' },
