@@ -67,7 +67,7 @@ export default {
     },
     btnClasses() {
       if (this.disabled) {
-        return ['bg-gray-400', 'text-gray-600', 'cursor-default']
+        return ['bg-gray-400', 'text-gray-600', 'cursor-not-allowed']
       }
 
       return [
