@@ -23,17 +23,17 @@
             {{ product.name }}
           </h3>
           <div class="px-2 mt-3 text-center border-b">
-            <p class="text-gray-700 text-base">Harga</p>
+            <p class="text-gray-700 text-base">Price</p>
             <p class="text-gray-700 font-semibold">Rp {{ product.price }}</p>
           </div>
           <div class="px-2 mt-3 text-center border-b">
-            <p class="text-gray-700 text-base">Bagi Hasil</p>
+            <p class="text-gray-700 text-base">Profit sharing</p>
             <p class="text-gray-700 font-semibold">
               {{ product.profit_sharing }}% / 1thn
             </p>
           </div>
           <div class="px-2 mt-3 text-center border-b">
-            <p class="text-gray-700 text-base">Periode Kontrak</p>
+            <p class="text-gray-700 text-base">Contract period</p>
             <p class="text-gray-700 font-semibold">
               {{ product.contract_period }} bulan
             </p>
