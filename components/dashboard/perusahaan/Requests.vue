@@ -17,17 +17,19 @@
         />
         <div class="card-content p-3">
           <div class="subhead text-center">
-            <h3 class="lg:text-2xl">{{ product.name }}</h3>
+            <h3 class="lg:text-2xl text-gray-700 font-semibold">
+              {{ product.name }}
+            </h3>
             <p class="text-primary">{{ product.pt }}</p>
           </div>
-          <p class="px-2 mt-3 text-center">
+          <p class="px-2 py-3 text-center text-gray-700 text-base">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Exercitationem nostrum minus hic sunt tempore aspernatur tempora
             quis atque.
           </p>
-          <div id="stock-info" class="text-center mt-4">
-            <p>Stock</p>
-            <p>{{ product.stock }}</p>
+          <div class="text-center">
+            <p class="text-gray-700 text-base">Stock</p>
+            <p class="text-gray-700 font-semibold">{{ product.stock }}</p>
           </div>
           <Button class="w-full mt-3">
             <a href="#" class="w-full px-12 py-2">requested</a>
