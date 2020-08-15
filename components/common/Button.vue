@@ -3,6 +3,7 @@
     class="rounded-md font-medium duration-75 focus:outline-none focus:border-transparent"
     :class="[btnSize, ...btnClasses]"
     :disabled="disabled"
+    :type="nativeType"
     @click="$emit('click')"
   >
     <slot></slot>
@@ -43,6 +44,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    nativeType: {
+      type: String,
+      default: null,
     },
   },
   computed: {
