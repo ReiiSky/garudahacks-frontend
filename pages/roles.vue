@@ -9,47 +9,71 @@
         praesentium possimus tempora odio.
       </p>
       <div
-        class="container mx-auto px-4 sm:px-12 lg:px-20 mt-24 role-card flex flex-wrap justify-between"
+        class="container mx-auto px-4 sm:px-10 lg:px-15 mt-24 role-card flex flex-wrap justify-between"
       >
-        <div class="card umkm">
-          <h3 class="lg:text-2xl text-center">UMKM</h3>
-          <p class="px-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Exercitationem nostrum minus hic sunt tempore aspernatur tempora
-            quis atque.
-          </p>
-          <p class="mt-12 text-center">Daftar sebagai</p>
-          <div class="flex items-center justify-between">
-            <Button :size="'full'">
-              <a href="/register?as=umkm">UMKM</a>
+        <div id="umkm" class="card bg-white rounded-lg shadow-lg">
+          <!-- <h3 class="lg:text-2xl text-center">UMKM</h3> -->
+          <img
+            src="~/assets/images/umkm.jpg"
+            alt="umkm image"
+            srcset
+            class="h-48 rounded-t-lg"
+          />
+          <div class="card-content p-3">
+            <p class="px-2">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Exercitationem nostrum minus hic sunt tempore aspernatur tempora
+              quis atque.
+            </p>
+            <p class="mt-12 text-center">Daftar sebagai</p>
+            <Button class="w-full">
+              <a href="/register?as=umkm" class="w-full px-12 py-2">UMKM</a>
             </Button>
           </div>
         </div>
-        <div class="card investor">
-          <h3 class="lg:text-2xl text-center">Pemodal</h3>
-          <p class="px-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Exercitationem nostrum minus hic sunt tempore aspernatur tempora
-            quis atque.
-          </p>
-          <p class="mt-12 text-center">Daftar sebagai</p>
-          <div class="flex items-center justify-between">
-            <Button :size="'full'">
-              <a href="/register?as=investor">Pemodal</a>
-            </Button>
+        <div id="investor" class="card bg-white rounded-lg shadow-lg">
+          <!-- <h3 class="lg:text-2xl text-center">Pemodal</h3> -->
+          <img
+            src="~/assets/images/investor.jpg"
+            alt="investor image"
+            srcset
+            class="h-48 rounded-t-lg w-full"
+          />
+          <div class="card-content p-3">
+            <p class="px-2">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Exercitationem nostrum minus hic sunt tempore aspernatur tempora
+              quis atque.
+            </p>
+            <p class="mt-12 text-center">Daftar sebagai</p>
+            <div class="items-center">
+              <Button class="w-full">
+                <a href="/register?as=investor" class="w-full px-12 py-2">
+                  Pemodal
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
-        <div class="card company">
-          <h3 class="lg:text-2xl text-center">Perusahaan</h3>
-          <p class="px-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Exercitationem nostrum minus hic sunt tempore aspernatur tempora
-            quis atque.?
-          </p>
-          <p class="mt-12 text-center">Daftar sebagai</p>
-          <div class="flex items-center justify-between">
-            <Button :size="'full'">
-              <a href="/register?as=company">Perusahaan</a>
+        <div id="company" class="card bg-white rounded-lg shadow-lg">
+          <!-- <h3 class="lg:text-2xl text-center">Perusahaan</h3> -->
+          <img
+            src="~/assets/images/company.jpg"
+            alt="company image"
+            srcset
+            class="h-48 rounded-t-lg"
+          />
+          <div class="card-content p-3">
+            <p class="px-2">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Exercitationem nostrum minus hic sunt tempore aspernatur tempora
+              quis atque.?
+            </p>
+            <p class="mt-12 text-center">Daftar sebagai</p>
+            <Button class="w-full">
+              <a href="/register?as=company" class="w-full px-12 py-2">
+                Perusahaan
+              </a>
             </Button>
           </div>
         </div>
@@ -66,7 +90,7 @@ export default {
 
 <style scoped>
 .card {
-  width: 14rem;
+  width: 16rem;
   height: auto;
 }
 </style>
